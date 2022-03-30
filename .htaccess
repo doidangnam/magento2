@@ -1,4 +1,27 @@
 RewriteEngine on
+<IfModule mod_expires.c>
+############################################
+## Add default Expires header
+## http://developer.yahoo.com/performance/rules.html
+#expires
+ExpiresDefault "access plus 1 year"
+ExpiresActive
+ExpiresByType
+ExpiresByType
+ExpiresByType
+ExpiresByType
+ExpiresByType
+ExpiresByType
+ExpiresByType
+On
+image/gif "access 1 year"
+image/jpg "access 1 year"
+image/jpeg "access 1 year"
+image/png "access 1 year"
+image/x-icon "access 1 year"
+text/css "access 1 month"
+application/x-javascript "access 1 month"
+</IfModule>
 RewriteCond %{REQUEST_URI} !^/pub/
 RewriteCond %{REQUEST_URI} !^/setup/
 RewriteCond %{REQUEST_URI} !^/update/
